@@ -1,0 +1,45 @@
+public class Discount
+{
+    public static void main (String[] args)
+    {
+        discount("Monday", 5.00);
+        discount("Tuesday", 20.00);
+        discount("Tuesday", 20.01);
+        discount("Wednesday", 36.22);
+        discount("Wednesday", 47.65);
+        discount("Thursday", 100.00);
+        discount("Friday", 3.00);
+        discount("Friday", 30.00);
+    }
+    public static void discount(String weekDay, double purchase)
+    {
+        //First if statement based on tuesday and purchase is bigger than 20
+        if (weekDay == "Tuesday" && purchase > 20.00)
+        {
+            System.out.println("It is Tuesday and the purchase is more than 20.00, so you are eligible");
+        }
+        else if (weekDay == "Wednesday")
+        {
+            System.out.println("It is Wednesday: eligible");
+        }
+        else if (purchase > 40.00)
+        {
+            System.out.println("Purchase is greater than 40 so, you're eligible");
+        }
+        else if (weekDay == "Friday")
+        {
+            if (purchase <= 5.00)
+            {
+                System.out.println("It's Friday and you can purchase anything $5 or lower: eligible");
+            }
+            else
+            {
+                System.out.println("not eligible");
+            }
+        }
+        else
+            {
+                System.out.println("not eligible");
+            }
+    }
+}
